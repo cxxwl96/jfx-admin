@@ -1,0 +1,11 @@
+${AnsiColor.BRIGHT_CYAN}
+      __   _____                      .___         .__
+     |__|_/ ____\___  ___ _____     __| _/  _____  |__|  ____
+     |  |\   __\ \  \/  / \__  \   / __ |  /     \ |  | /    \
+     |  | |  |    >    <   / __ \_/ /_/ | |  Y Y  \|  ||   |  \
+ /\__|  | |__|   /__/\_ \ (____  /\____ | |__|_|  /|__||___|  /
+ \______|              \/      \/      \/       \/          \/
+
+${app.info.app-name} Published ${app.info.version} @ ${app.info.url}
+Email: ${app.info.email}
+${AnsiColor.DEFAULT}

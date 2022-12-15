@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.validation.RequiredFieldValidator?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml">
+    <VBox fx:id="rootPane" spacing="10.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+        <ScrollPane fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS">
+            <StackPane>
+                <GridPane fx:id="formGrid" hgap="20.0" vgap="20.0" styleClass="grid-pane-form">
+                    <padding>
+                        <Insets bottom="10.0" top="10.0"/>
+                    </padding>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" prefWidth="100.0" maxWidth="100.0"/>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" prefWidth="200.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints valignment="CENTER"/>
+                        <RowConstraints valignment="CENTER"/>
+                        <RowConstraints valignment="CENTER"/>
+                    </rowConstraints>
+                    <HBox styleClass="hbox" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                               styleClass="cell, cell-title" text="原密码" HBox.hgrow="ALWAYS">
+                            <graphic>
+                                <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="*">
+                                    <font>
+                                        <Font size="16.0"/>
+                                    </font>
+                                </Text>
+                            </graphic>
+                        </Label>
+                    </HBox>
+                    <HBox styleClass="hbox" alignment="CENTER_LEFT" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                        <JFXPasswordField fx:id="oldPassword" promptText="请输入原密码" HBox.hgrow="ALWAYS"
+                        >
+                            <validators>
+                                <RequiredFieldValidator message="请输入原密码">
+                                    <FontIcon iconLiteral="fas-exclamation-triangle"/>
+                                </RequiredFieldValidator>
+                            </validators>
+                        </JFXPasswordField>
+                    </HBox>
+                    <HBox styleClass="hbox" GridPane.rowIndex="1" GridPane.columnIndex="0">
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                               styleClass="cell, cell-title" text="新密码" HBox.hgrow="ALWAYS">
+                            <graphic>
+                                <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="*">
+                                    <font>
+                                        <Font size="16.0"/>
+                                    </font>
+                                </Text>
+                            </graphic>
+                        </Label>
+                    </HBox>
+                    <HBox styleClass="hbox" alignment="CENTER_LEFT" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                        <JFXPasswordField fx:id="newPassword" promptText="请输入新密码" HBox.hgrow="ALWAYS"
+                        >
+                            <validators>
+                                <RequiredFieldValidator message="请输入新密码">
+                                    <FontIcon iconLiteral="fas-exclamation-triangle"/>
+                                </RequiredFieldValidator>
+                            </validators>
+                        </JFXPasswordField>
+                    </HBox>
+                    <HBox styleClass="hbox" GridPane.rowIndex="2" GridPane.columnIndex="0">
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                               styleClass="cell, cell-title" text="确认密码" HBox.hgrow="ALWAYS">
+                            <graphic>
+                                <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="*">
+                                    <font>
+                                        <Font size="16.0"/>
+                                    </font>
+                                </Text>
+                            </graphic>
+                        </Label>
+                    </HBox>
+                    <HBox styleClass="hbox" alignment="CENTER_LEFT" GridPane.rowIndex="2" GridPane.columnIndex="1">
+                        <JFXPasswordField fx:id="confirmPassword" promptText="请输入确认密码" HBox.hgrow="ALWAYS"
+                        >
+                            <validators>
+                                <RequiredFieldValidator message="请输入确认密码">
+                                    <FontIcon iconLiteral="fas-exclamation-triangle"/>
+                                </RequiredFieldValidator>
+                            </validators>
+                        </JFXPasswordField>
+                    </HBox>
+                    <HBox alignment="BOTTOM_LEFT" GridPane.rowIndex="3" GridPane.columnIndex="1" spacing="10">
+                        <ImageView fx:id="imgCaptcha" fitHeight="45.0" fitWidth="163.0" pickOnBounds="true"
+                                   smooth="false">
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </ImageView>
+                        <JFXTextField fx:id="textCaptcha" promptText="请输入验证码" HBox.hgrow="ALWAYS"
+                        >
+                            <validators>
+                                <RequiredFieldValidator message="请输入验证码">
+                                    <FontIcon iconLiteral="fas-exclamation-triangle"/>
+                                </RequiredFieldValidator>
+                            </validators>
+                        </JFXTextField>
+                    </HBox>
+                </GridPane>
+                <JFXSpinner fx:id="spinner" radius="18.0" startingAngle="90.0" visible="false"
+                            styleClass="blue-spinner"/>
+            </StackPane>
+        </ScrollPane>
+        <HBox alignment="BOTTOM_RIGHT" spacing="10.0">
+            <VBox.margin>
+                <Insets/>
+            </VBox.margin>
+            <JFXButton fx:id="submitBtn" mnemonicParsing="false" text="提   交"/>
+        </HBox>
+    </VBox>
+</StackPane>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.cxxwl96.jfx.admin.client.component.JFXIcon?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.Cursor?>
+<JFXListView xmlns="http://javafx.com/javafx"
+             xmlns:fx="http://javafx.com/fxml" prefWidth="105">
+    <Label fx:id="userSetting" text="个人设置">
+        <cursor>
+            <Cursor fx:constant="HAND"/>
+        </cursor>
+        <graphic>
+            <JFXIcon iconCode="icon-ri-user-settings-line"/>
+        </graphic>
+    </Label>
+    <Label fx:id="loginExit" text="退出登录">
+        <cursor>
+            <Cursor fx:constant="HAND"/>
+        </cursor>
+        <graphic>
+            <JFXIcon iconCode="exit-outline"/>
+        </graphic>
+    </Label>
+    <Label fx:id="close" text="关闭程序">
+        <cursor>
+            <Cursor fx:constant="HAND"/>
+        </cursor>
+        <graphic>
+            <JFXIcon iconCode="power-off"/>
+        </graphic>
+    </Label>
+</JFXListView>

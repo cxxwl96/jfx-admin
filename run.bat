@@ -1,0 +1,1 @@
+java -Dpw.salt=cxxwl96@sina.com -Djasypt.encryptor.password=cxxwl96@sina.com -jar jfx-admin-1.0.0.jar

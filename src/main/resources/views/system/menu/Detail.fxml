@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<GridPane styleClass="grid-pane-detail" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1">
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" maxWidth="150.0" minWidth="50.0"
+                           prefWidth="100.0"/>
+        <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="ALWAYS" maxWidth="150.0" minWidth="50.0"
+                           prefWidth="100.0"/>
+        <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" prefWidth="100.0"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+        <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+        <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+        <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+        <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+        <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+        <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+        <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+        <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+        <RowConstraints vgrow="SOMETIMES"/>
+    </rowConstraints>
+    <VBox.margin>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </VBox.margin>
+    <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="cell, cell-title"
+           text="菜单类型" GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="typeLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+           styleClass="cell, cell-value" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="cell, cell-title"
+           text="菜单标题" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="titleLabel" maxHeight="1.7976931348623157E308"
+           maxWidth="1.7976931348623157E308" styleClass="cell, cell-value"
+           GridPane.columnIndex="1" GridPane.rowIndex="1"
+           GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+           styleClass="cell, cell-title"
+           text="排序" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="orderLabel" maxHeight="1.7976931348623157E308"
+           maxWidth="1.7976931348623157E308" styleClass="cell, cell-value"
+           GridPane.columnIndex="1" GridPane.rowIndex="2"
+           GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+           styleClass="cell, cell-title"
+           text="是否主菜单" GridPane.columnIndex="2"
+           GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="mainLabel" maxHeight="1.7976931348623157E308"
+           maxWidth="1.7976931348623157E308" styleClass="cell, cell-value"
+           GridPane.columnIndex="3" GridPane.rowIndex="2"
+           GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+           styleClass="cell, cell-title"
+           text="是否隐藏" GridPane.rowIndex="3"
+           GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="hideLabel" maxHeight="1.7976931348623157E308"
+           maxWidth="1.7976931348623157E308" styleClass="cell, cell-value"
+           GridPane.columnIndex="1" GridPane.rowIndex="3"
+           GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+           styleClass="cell, cell-title"
+           text="是否http链接" GridPane.columnIndex="2"
+           GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="httpUrlLabel" maxHeight="1.7976931348623157E308"
+           maxWidth="1.7976931348623157E308" styleClass="cell, cell-value"
+           GridPane.columnIndex="3" GridPane.rowIndex="3"
+           GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+           styleClass="cell, cell-title"
+           text="资源/链接" GridPane.rowIndex="4"
+           GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="resourceUrlLabel" maxHeight="1.7976931348623157E308"
+           maxWidth="1.7976931348623157E308" styleClass="cell, cell-value"
+           GridPane.columnIndex="1" GridPane.columnSpan="3"
+           GridPane.rowIndex="4" GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+           styleClass="cell, cell-title"
+           text="是否隐藏http链接的toolbar" GridPane.rowIndex="5"
+           GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+           styleClass="cell, cell-title"
+           text="权限标识" GridPane.rowIndex="6"
+           GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="hideToolbarLabel" maxHeight="1.7976931348623157E308"
+           maxWidth="1.7976931348623157E308" styleClass="cell, cell-value"
+           GridPane.columnIndex="1" GridPane.rowIndex="5"
+           GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="httpUrlBlankLabel" maxHeight="1.7976931348623157E308"
+           maxWidth="1.7976931348623157E308" styleClass="cell, cell-value"
+           GridPane.columnIndex="3" GridPane.rowIndex="5"
+           GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="permissionsLabel" maxHeight="1.7976931348623157E308"
+           maxWidth="1.7976931348623157E308" styleClass="cell, cell-value"
+           GridPane.columnIndex="1" GridPane.columnSpan="3"
+           GridPane.rowIndex="6" GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="statusLabel" maxHeight="1.7976931348623157E308"
+           maxWidth="1.7976931348623157E308" styleClass="cell, cell-value"
+           GridPane.columnIndex="1" GridPane.rowIndex="7"
+           GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="codeLabel" maxHeight="1.7976931348623157E308"
+           maxWidth="1.7976931348623157E308" styleClass="cell, cell-value"
+           GridPane.columnIndex="3" GridPane.rowIndex="7"
+           GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+           styleClass="cell, cell-title"
+           text="状态" GridPane.rowIndex="7" GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+           styleClass="cell, cell-title"
+           text="菜单编码" GridPane.columnIndex="2"
+           GridPane.rowIndex="7" GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+           styleClass="cell, cell-title"
+           text="是否外链" GridPane.columnIndex="2"
+           GridPane.rowIndex="5" GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+           styleClass="cell, cell-title"
+           text="图标" GridPane.columnIndex="2" GridPane.rowIndex="1"
+           GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="iconLabel" maxHeight="1.7976931348623157E308"
+           maxWidth="1.7976931348623157E308" styleClass="cell, cell-value"
+           GridPane.columnIndex="3" GridPane.rowIndex="1"
+           GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+           styleClass="cell, cell-title"
+           text="备注" GridPane.rowIndex="8" GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="remarkLabel" maxHeight="1.7976931348623157E308"
+           maxWidth="1.7976931348623157E308" styleClass="cell, cell-value"
+           GridPane.columnIndex="1" GridPane.columnSpan="3"
+           GridPane.rowIndex="8" GridPane.vgrow="ALWAYS">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </Label>
+</GridPane>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<AnchorPane styleClass="transparent-pane" stylesheets="@../../assets/css/launch.css" xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <ImageView pickOnBounds="true" preserveRatio="true" styleClass="transparent-pane">
+        <Image url="@../../assets/imgs/launch.png"/>
+    </ImageView>
+    <JFXProgressBar layoutY="441.0" prefWidth="760.0" styleClass="launch-jfx-progress-bar"/>
+    <Label fx:id="titleLabel" layoutX="27.0" layoutY="186.0" prefWidth="700.0" underline="true" wrapText="true">
+        <font>
+            <Font name="Arial Rounded MT Bold" size="67.0"/>
+        </font>
+        <textFill>
+            <LinearGradient>
+                <stops>
+                    <Stop>
+                        <color>
+                            <Color red="0.4470588266849518" green="0.19607843458652496" blue="0.8941176533699036"/>
+                        </color>
+                    </Stop>
+                    <Stop offset="0.006711409395973154">
+                        <color>
+                            <Color red="0.7833333611488342" green="0.6666666865348816" blue="1.0"/>
+                        </color>
+                    </Stop>
+                    <Stop offset="0.4851653298412179">
+                        <color>
+                            <Color red="0.7268518805503845" green="0.7905864119529724" blue="1.0"/>
+                        </color>
+                    </Stop>
+                    <Stop offset="1.0">
+                        <color>
+                            <Color red="0.9259259104728699" green="0.9419752955436707" blue="1.0"/>
+                        </color>
+                    </Stop>
+                </stops>
+            </LinearGradient>
+        </textFill>
+    </Label>
+    <Label alignment="CENTER" layoutY="418.0" prefWidth="760.0" text="Loading..." textFill="#ecf0ff" wrapText="true">
+        <font>
+            <Font name="Microsoft YaHei Bold" size="14.0"/>
+        </font>
+    </Label>
+</AnchorPane>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<StackPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1">
+    <HBox styleClass="card-pane">
+        <StackPane.margin>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </StackPane.margin>
+        <JFXListView fx:id="listMenu" prefWidth="140.0">
+            <Label text="基本设置" id="usersetting:base"
+                   userData="com.cxxwl96.jfx.admin.client.view.setting.user.BaseSettingController"/>
+            <Label text="安全设置" id="usersetting:security"
+                   userData="com.cxxwl96.jfx.admin.client.view.setting.user.SecuritySettingController"/>
+            <Label text="我的角色" id="usersetting:myroles"
+                   userData="com.cxxwl96.jfx.admin.client.view.setting.user.MyRolesController"/>
+        </JFXListView>
+        <HBox styleClass="separator"/>
+        <VBox HBox.hgrow="ALWAYS">
+            <HBox alignment="CENTER_LEFT">
+                <padding>
+                    <Insets left="20"/>
+                </padding>
+                <Label fx:id="title" styleClass="title-label"/>
+            </HBox>
+            <HBox styleClass="separator"/>
+            <StackPane fx:id="mainPane" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </HBox>
+</StackPane>
+

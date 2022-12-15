@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.cxxwl96.jfx.admin.client.component.JFXIcon?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox fx:id="rootPane" styleClass="jfx-selector" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1">
+    <ScrollPane fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS">
+        <FlowPane fx:id="flowPane" hgap="10" vgap="10" styleClass="backgroundPane"/>
+    </ScrollPane>
+    <HBox>
+        <JFXTextField fx:id="input" styleClass="jfx-selector-text-field"
+                      HBox.hgrow="ALWAYS"/>
+        <Label fx:id="expandBtn" contentDisplay="GRAPHIC_ONLY" maxHeight="1.7976931348623157E308"
+               HBox.hgrow="ALWAYS">
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+            <graphic>
+                <JFXIcon iconCode="angle-down"/>
+            </graphic>
+        </Label>
+    </HBox>
+    <HBox fx:id="popupHBox"/>
+</VBox>

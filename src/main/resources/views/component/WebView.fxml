@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.WebView?>
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml/1">
+    <JFXToolbar fx:id="toolbar">
+        <leftItems>
+            <Label fx:id="backBtn" contentDisplay="GRAPHIC_ONLY" styleClass="jfx-label-button">
+                <tooltip>
+                    <Tooltip text="后退一页"/>
+                </tooltip>
+            </Label>
+            <Label fx:id="frontBtn" contentDisplay="GRAPHIC_ONLY" styleClass="jfx-label-button">
+                <tooltip>
+                    <Tooltip text="前进一页"/>
+                </tooltip>
+            </Label>
+            <Label fx:id="refreshBtn" contentDisplay="GRAPHIC_ONLY" styleClass="jfx-label-button">
+                <tooltip>
+                    <Tooltip text="刷新"/>
+                </tooltip>
+            </Label>
+            <Label fx:id="shareBtn" contentDisplay="GRAPHIC_ONLY" styleClass="jfx-label-button">
+                <tooltip>
+                    <Tooltip text="用浏览器打开"/>
+                </tooltip>
+            </Label>
+            <JFXTextField fx:id="titleText" editable="false" prefWidth="300" VBox.vgrow="ALWAYS"/>
+        </leftItems>
+    </JFXToolbar>
+    <WebView fx:id="browser" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0"
+             VBox.vgrow="ALWAYS"/>
+</VBox>

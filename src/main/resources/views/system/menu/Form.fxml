@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.cxxwl96.jfx.admin.client.component.JFXIcon?>
+<?import com.cxxwl96.jfx.admin.client.component.JFXIconPicker?>
+<?import com.cxxwl96.jfx.admin.client.component.JFXNumberField?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import com.jfoenix.validation.RequiredFieldValidator?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<ScrollPane fitToHeight="true" fitToWidth="true" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1">
+    <GridPane fx:id="root" styleClass="grid-pane-form">
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="50.0" prefWidth="150.0"/>
+            <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" prefWidth="200.0"/>
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="50.0" prefWidth="150.0"/>
+            <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" prefWidth="200.0"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+            <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+            <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+            <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+            <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+            <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+            <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+            <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+            <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+            <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+            <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+            <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+            <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+        </rowConstraints>
+        <HBox styleClass="hbox,always-show" GridPane.vgrow="ALWAYS">
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                   styleClass="cell, cell-title" text="类型"
+                   HBox.hgrow="ALWAYS"/>
+        </HBox>
+        <HBox styleClass="hbox,always-show" GridPane.columnIndex="2">
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                   styleClass="cell, cell-title" text="上级菜单" HBox.hgrow="ALWAYS"/>
+        </HBox>
+        <HBox styleClass="hbox,always-show" GridPane.rowIndex="1">
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                   styleClass="cell, cell-title" text="标题" HBox.hgrow="ALWAYS">
+                <graphic>
+                    <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="*">
+                        <font>
+                            <Font size="16.0"/>
+                        </font>
+                    </Text>
+                </graphic>
+            </Label>
+        </HBox>
+        <HBox styleClass="hbox,always-show" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                   styleClass="cell, cell-title" text="图标" HBox.hgrow="ALWAYS"/>
+        </HBox>
+        <HBox styleClass="hbox,always-show" GridPane.rowIndex="2">
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                   styleClass="cell, cell-title" text="排序" HBox.hgrow="ALWAYS"/>
+            <Label maxHeight="1.7976931348623157E308"
+                   styleClass="cell, cell-title-help">
+                <padding>
+                    <Insets left="10.0"/>
+                </padding>
+                <graphic>
+                    <JFXIcon iconCode="info-circle" HBox.hgrow="ALWAYS"/>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="默认排序为升序"/>
+                </tooltip>
+            </Label>
+        </HBox>
+        <HBox styleClass="hbox,menu-show" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                   styleClass="cell, cell-title" text="是否主菜单" HBox.hgrow="ALWAYS"/>
+        </HBox>
+        <HBox styleClass="hbox,always-show" GridPane.rowIndex="3">
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                   styleClass="cell, cell-title" text="是否隐藏" HBox.hgrow="ALWAYS"/>
+            <Label maxHeight="1.7976931348623157E308"
+                   styleClass="cell, cell-title-help">
+                <padding>
+                    <Insets left="10.0"/>
+                </padding>
+                <graphic>
+                    <JFXIcon iconCode="info-circle" HBox.hgrow="ALWAYS"/>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="菜单是否隐藏不显示"/>
+                </tooltip>
+            </Label>
+        </HBox>
+        <HBox styleClass="hbox,menu-show" GridPane.columnIndex="2" GridPane.rowIndex="3">
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                   styleClass="cell, cell-title" text="是否http链接" HBox.hgrow="ALWAYS"/>
+            <Label maxHeight="1.7976931348623157E308"
+                   styleClass="cell, cell-title-help">
+                <padding>
+                    <Insets left="10.0"/>
+                </padding>
+                <graphic>
+                    <JFXIcon iconCode="info-circle" HBox.hgrow="ALWAYS"/>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="资源/链接是否为http链接"/>
+                </tooltip>
+            </Label>
+        </HBox>
+        <HBox styleClass="hbox,menu-show" GridPane.rowIndex="6">
+            <Label fx:id="resourceUrlLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                   styleClass="cell, cell-title" text="资源/链接" HBox.hgrow="ALWAYS">
+                <graphic>
+                    <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="*">
+                        <font>
+                            <Font size="16.0"/>
+                        </font>
+                    </Text>
+                </graphic>
+            </Label>
+            <Label maxHeight="1.7976931348623157E308"
+                   styleClass="cell, cell-title-help">
+                <padding>
+                    <Insets left="10.0"/>
+                </padding>
+                <graphic>
+                    <JFXIcon iconCode="info-circle" HBox.hgrow="ALWAYS"/>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="需要加载的controller类引用路径或http链接"/>
+                </tooltip>
+            </Label>
+        </HBox>
+        <HBox styleClass="hbox,http-show" managed="false" visible="false" GridPane.rowIndex="7">
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                   styleClass="cell, cell-title" text="是否隐藏http链接的toolbar" HBox.hgrow="ALWAYS"/>
+            <Label maxHeight="1.7976931348623157E308"
+                   styleClass="cell, cell-title-help">
+                <padding>
+                    <Insets left="10.0"/>
+                </padding>
+                <graphic>
+                    <JFXIcon iconCode="info-circle" HBox.hgrow="ALWAYS"/>
+                </graphic>
+                <tooltip>
+                    <Tooltip
+                            text="是否隐藏http链接的toolbar：如果资源/链接为http链接，并且是否外链为否，则该项可设置是否隐藏http链接显示的WebView中的ToolBar工具"/>
+                </tooltip>
+            </Label>
+        </HBox>
+        <HBox styleClass="hbox,http-show" managed="false" visible="false" GridPane.columnIndex="2"
+              GridPane.rowIndex="7">
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                   styleClass="cell, cell-title" text="是否外链" HBox.hgrow="ALWAYS"/>
+            <Label maxHeight="1.7976931348623157E308"
+                   styleClass="cell, cell-title-help">
+                <padding>
+                    <Insets left="10.0"/>
+                </padding>
+                <graphic>
+                    <JFXIcon iconCode="info-circle" HBox.hgrow="ALWAYS"/>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="若菜单为http链接，则该链接是否使用默认浏览器打开"/>
+                </tooltip>
+            </Label>
+        </HBox>
+        <HBox styleClass="hbox,button-show" GridPane.rowIndex="9">
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                   styleClass="cell, cell-title" text="权限标识" HBox.hgrow="ALWAYS"/>
+            <Label maxHeight="1.7976931348623157E308"
+                   styleClass="cell, cell-title-help">
+                <padding>
+                    <Insets left="10.0"/>
+                </padding>
+                <graphic>
+                    <JFXIcon iconCode="info-circle" HBox.hgrow="ALWAYS"/>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="用于标识系统权限，全局菜单权限标识应唯一存在"/>
+                </tooltip>
+            </Label>
+        </HBox>
+        <HBox styleClass="hbox,always-show" GridPane.rowIndex="10">
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                   styleClass="cell, cell-title" text="状态" HBox.hgrow="ALWAYS"/>
+            <Label maxHeight="1.7976931348623157E308"
+                   styleClass="cell, cell-title-help">
+                <padding>
+                    <Insets left="10.0"/>
+                </padding>
+                <graphic>
+                    <JFXIcon iconCode="info-circle" HBox.hgrow="ALWAYS"/>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="菜单是否开启"/>
+                </tooltip>
+            </Label>
+        </HBox>
+        <HBox styleClass="hbox,always-show" GridPane.columnIndex="2" GridPane.rowIndex="10">
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                   styleClass="cell, cell-title" text="菜单编码" HBox.hgrow="ALWAYS"/>
+            <Label maxHeight="1.7976931348623157E308"
+                   styleClass="cell, cell-title-help">
+                <padding>
+                    <Insets left="10.0"/>
+                </padding>
+                <graphic>
+                    <JFXIcon iconCode="info-circle" HBox.hgrow="ALWAYS"/>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="用于标识菜单，可通过菜单编码获取菜单节点或菜单树，全局菜单编码应唯一存在"/>
+                </tooltip>
+            </Label>
+        </HBox>
+        <HBox styleClass="hbox,always-show" GridPane.rowIndex="11">
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                   styleClass="cell, cell-title" text="备注" HBox.hgrow="ALWAYS"/>
+        </HBox>
+        <HBox styleClass="hbox,always-show" alignment="CENTER_LEFT" spacing="20.0" GridPane.columnIndex="1">
+            <JFXRadioButton mnemonicParsing="false" selected="true" text="目录" userData="DIRECTORY">
+                <toggleGroup>
+                    <ToggleGroup fx:id="menuType"/>
+                </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton mnemonicParsing="false" text="菜单" userData="MENU" toggleGroup="$menuType"/>
+            <JFXRadioButton mnemonicParsing="false" text="按钮" userData="BUTTON" toggleGroup="$menuType"/>
+            <padding>
+                <Insets left="20.0"/>
+            </padding>
+        </HBox>
+        <HBox styleClass="hbox,always-show" alignment="CENTER_LEFT" GridPane.columnIndex="3">
+            <Label fx:id="parentLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                   styleClass="cell, cell-value" HBox.hgrow="ALWAYS"/>
+        </HBox>
+        <HBox styleClass="hbox,always-show" alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <JFXTextField fx:id="titleText" maxWidth="1.7976931348623157E308" promptText="请输入标题"
+                          HBox.hgrow="ALWAYS">
+                <validators>
+                    <RequiredFieldValidator message="请输入标题">
+                        <FontIcon iconLiteral="fas-exclamation-triangle"/>
+                    </RequiredFieldValidator>
+                </validators>
+            </JFXTextField>
+        </HBox>
+        <HBox styleClass="hbox,always-show" alignment="CENTER_LEFT" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <JFXTextField fx:id="iconText" maxWidth="1.7976931348623157E308" promptText="请输入图标"
+                          HBox.hgrow="ALWAYS" editable="false"/>
+            <JFXIconPicker fx:id="iconPicker"/>
+        </HBox>
+        <HBox styleClass="hbox,always-show" alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <JFXNumberField fx:id="orderText" type="Integer" maxWidth="1.7976931348623157E308"
+                            promptText="请输入排序" text="0" HBox.hgrow="ALWAYS"/>
+        </HBox>
+        <HBox styleClass="hbox,menu-show" alignment="CENTER_LEFT" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <JFXToggleButton fx:id="mainSwitch" mnemonicParsing="false"/>
+        </HBox>
+        <HBox styleClass="hbox,always-show" alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <JFXToggleButton fx:id="hideSwitch" mnemonicParsing="false"/>
+        </HBox>
+        <HBox styleClass="hbox,menu-show" alignment="CENTER_LEFT" GridPane.columnIndex="3"
+              GridPane.rowIndex="3">
+            <JFXToggleButton fx:id="httpUrlSwitch" mnemonicParsing="false"/>
+        </HBox>
+        <HBox styleClass="hbox,menu-show" alignment="CENTER_LEFT" GridPane.columnIndex="1"
+              GridPane.columnSpan="3"
+              GridPane.rowIndex="6">
+            <JFXTextField fx:id="resourceUrlText" maxWidth="1.7976931348623157E308" promptText="请输入资源/链接"
+                          HBox.hgrow="ALWAYS">
+                <validators>
+                    <RequiredFieldValidator message="请输入资源/链接">
+                        <FontIcon iconLiteral="fas-exclamation-triangle"/>
+                    </RequiredFieldValidator>
+                </validators>
+            </JFXTextField>
+        </HBox>
+        <HBox styleClass="hbox,http-show" managed="false" visible="false" alignment="CENTER_LEFT"
+              GridPane.columnIndex="1"
+              GridPane.rowIndex="7">
+            <JFXToggleButton fx:id="hideToolbarSwitch" mnemonicParsing="false"/>
+        </HBox>
+        <HBox styleClass="hbox,http-show" managed="false" visible="false" alignment="CENTER_LEFT"
+              GridPane.columnIndex="3"
+              GridPane.rowIndex="7">
+            <JFXToggleButton fx:id="httpUrlBlankSwitch" mnemonicParsing="false"/>
+        </HBox>
+        <HBox styleClass="hbox,button-show" alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.columnSpan="3"
+              GridPane.rowIndex="9">
+            <JFXTextField fx:id="permissionsText" maxWidth="1.7976931348623157E308" promptText="请输入权限标识"
+                          HBox.hgrow="ALWAYS"/>
+        </HBox>
+        <HBox styleClass="hbox,always-show" alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="10">
+            <JFXToggleButton fx:id="statusSwitch" mnemonicParsing="false"/>
+        </HBox>
+        <HBox styleClass="hbox,always-show" alignment="CENTER_LEFT" GridPane.columnIndex="3" GridPane.rowIndex="10">
+            <JFXTextField fx:id="codeText" maxWidth="1.7976931348623157E308" promptText="请输入菜单编码"
+                          HBox.hgrow="ALWAYS"/>
+        </HBox>
+        <HBox styleClass="hbox,always-show" alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.columnSpan="3"
+              GridPane.rowIndex="11">
+            <JFXTextArea fx:id="remarkText" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                         minHeight="100" promptText="请输入备注"/>
+        </HBox>
+    </GridPane>
+</ScrollPane>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXDialogLayout?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<StackPane fx:id="rootPane" prefHeight="547.0" prefWidth="771.0" xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml/1">
+    <SplitPane dividerPositions="0.25" prefHeight="559.0" prefWidth="868.0" styleClass="jfx-content">
+        <VBox scaleX="0.95" scaleY="0.95" spacing="7.0" maxWidth="280.0" prefWidth="240.0"
+              styleClass="card-pane">
+            <StackPane VBox.vgrow="ALWAYS">
+                <VBox fx:id="treePane" spacing="7.0">
+                    <Label maxHeight="30.0" prefHeight="30.0" styleClass="title-label" text="菜单列表"/>
+                    <HBox alignment="CENTER_LEFT" prefHeight="29.0"
+                          spacing="10.0">
+                        <padding>
+                            <Insets bottom="7.0" top="7.0"/>
+                        </padding>
+                        <JFXTextField fx:id="treeSearchTextField" HBox.hgrow="ALWAYS"
+                                      promptText="输入关键字进行过滤" minWidth="160"/>
+                        <Label fx:id="compressBtn" contentDisplay="GRAPHIC_ONLY"
+                               styleClass="jfx-label-button"/>
+                        <Label fx:id="expandBtn" contentDisplay="GRAPHIC_ONLY"
+                               styleClass="jfx-label-button"/>
+                    </HBox>
+                    <TreeView fx:id="treeView" VBox.vgrow="ALWAYS"/>
+                </VBox>
+                <JFXSpinner fx:id="treeViewSpinner" radius="18.0" startingAngle="90.0"
+                            styleClass="blue-spinner" visible="false"/>
+            </StackPane>
+        </VBox>
+        <VBox scaleX="0.95" scaleY="0.95" spacing="7.0" styleClass="card-pane">
+            <Label maxHeight="30.0" prefHeight="30.0" styleClass="title-label" text="菜单信息"/>
+            <StackPane fx:id="detailPane">
+
+                <padding>
+                    <Insets top="20.0" right="20" bottom="20.0" left="20"/>
+                </padding>
+            </StackPane>
+        </VBox>
+    </SplitPane>
+    <JFXDialog fx:id="formDialog">
+        <JFXDialogLayout fx:id="formDialogLayout" prefWidth="1.7976931348623157E308"
+                         prefHeight="1.7976931348623157E308">
+            <heading>
+                <Label fx:id="formTitle"/>
+            </heading>
+            <body/>
+            <actions>
+                <JFXProgressBar fx:id="formProgressBar" managed="false" maxWidth="1.7976931348623157E308"
+                                prefWidth="320" visible="false">
+                </JFXProgressBar>
+                <JFXButton fx:id="saveBtn" buttonType="RAISED" text="保存"/>
+                <JFXButton fx:id="cancelBtn" buttonType="RAISED" text="取消"/>
+            </actions>
+        </JFXDialogLayout>
+    </JFXDialog>
+</StackPane>

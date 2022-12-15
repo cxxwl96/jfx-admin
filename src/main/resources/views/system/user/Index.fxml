@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.cxxwl96.jfx.admin.client.component.detail.JFXDetail?>
+<?import com.cxxwl96.jfx.admin.client.component.form.JFXForm?>
+<?import com.cxxwl96.jfx.admin.client.component.selector.JFXSelector?>
+<?import com.cxxwl96.jfx.admin.client.component.tabledata.JFXTableData?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXDialogLayout?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.StackPane?>
+<StackPane fx:id="rootPane" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1">
+    <JFXTableData fx:id="tableData" title="用户列表"/>
+    <JFXDialog fx:id="formDialog">
+        <JFXForm fx:id="form"/>
+    </JFXDialog>
+    <JFXDialog fx:id="detailDialog">
+        <JFXDetail fx:id="detail"/>
+    </JFXDialog>
+    <JFXDialog fx:id="roleDialog">
+        <JFXDialogLayout>
+            <heading>
+                <Label text="分配角色"/>
+            </heading>
+            <body>
+                <JFXSelector fx:id="selector"/>
+            </body>
+            <actions>
+                <JFXButton fx:id="roleSubmitBtn" mnemonicParsing="false" text="保存"/>
+                <JFXButton fx:id="roleCancelBtn" mnemonicParsing="false" text="取消" styleClass="jfx-button-flat"/>
+            </actions>
+        </JFXDialogLayout>
+    </JFXDialog>
+</StackPane>

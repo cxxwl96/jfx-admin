@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.cxxwl96.jfx.admin.client.component.JFXIcon?>
+<?import com.jfoenix.controls.JFXBadge?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXDrawersStack?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.transitions.hamburger.HamburgerSlideCloseTransition?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import com.cxxwl96.jfx.admin.client.component.iconswitch.IconSwitch?>
+<StackPane prefWidth="1000" prefHeight="750" fx:id="rootPane" xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml/1">
+    <Pane fx:id="backgroundPicturePane" prefHeight="200.0" prefWidth="200.0">
+        <StackPane.margin>
+            <Insets/>
+        </StackPane.margin>
+    </Pane>
+    <Pane fx:id="backgroundPane" prefHeight="200.0" prefWidth="200.0" styleClass="backgroundPane">
+        <StackPane.margin>
+            <Insets/>
+        </StackPane.margin>
+    </Pane>
+    <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0">
+        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308"
+              minHeight="-Infinity" prefHeight="50.0" spacing="5.0" styleClass="tool-pane" VBox.vgrow="ALWAYS">
+            <JFXHamburger fx:id="navigationButton" maxHeight="-Infinity" maxWidth="-Infinity"
+                          prefHeight="40.0" prefWidth="45.0">
+                <padding>
+                    <Insets left="5.0"/>
+                </padding>
+                <HamburgerSlideCloseTransition/>
+            </JFXHamburger>
+            <JFXButton fx:id="homeButton" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity"
+                       maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0"
+                       prefWidth="40.0" styleClass="jfx-label-button,tool-bar-button">
+                <graphic>
+                    <JFXIcon iconCode="home-outline"/>
+                </graphic>
+            </JFXButton>
+            <JFXDatePicker fx:id="datePicker" editable="false"
+                           maxWidth="150">
+                <HBox.margin>
+                    <Insets/>
+                </HBox.margin>
+                <padding>
+                    <Insets bottom="7.0"/>
+                </padding>
+            </JFXDatePicker>
+            <HBox fx:id="rightHbox" alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS" spacing="10">
+                <IconSwitch fx:id="iconSwitch" prefWidth="50" prefHeight="32"/>
+                <JFXBadge maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="45.0"
+                          styleClass="icons-badge" text="2">
+                    <StackPane>
+                        <JFXButton fx:id="bellButton" contentDisplay="GRAPHIC_ONLY"
+                                   maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0"
+                                   prefWidth="40.0" styleClass="jfx-label-button,tool-bar-button"
+                                   text="1">
+                            <StackPane.margin>
+                                <Insets/>
+                            </StackPane.margin>
+                            <graphic>
+                                <JFXIcon iconCode="cc-bell-o"/>
+                            </graphic>
+                        </JFXButton>
+                    </StackPane>
+                </JFXBadge>
+                <VBox alignment="CENTER">
+                    <Label fx:id="userLabel" maxWidth="1.7976931348623157E308"
+                           style="-fx-font-size: 16;-fx-font-weight: bold" alignment="CENTER" VBox.vgrow="ALWAYS"/>
+                    <Label fx:id="roleLabel" maxWidth="1.7976931348623157E308" text="[游客]" style="-fx-font-size: 12;"
+                           alignment="CENTER" VBox.vgrow="ALWAYS"/>
+                    <padding>
+                        <Insets left="7.0"/>
+                    </padding>
+                </VBox>
+                <JFXButton fx:id="userButton" contentDisplay="GRAPHIC_ONLY" maxHeight="40.0" maxWidth="40.0"
+                           minHeight="40.0" minWidth="40.0" prefHeight="40.0" prefWidth="40.0"
+                           styleClass="jfx-label-button,tool-bar-button" textFill="WHITE">
+                    <graphic>
+                        <JFXIcon iconCode="ChevronDownCircle"/>
+                    </graphic>
+                </JFXButton>
+                <padding>
+                    <Insets right="5.0"/>
+                </padding>
+            </HBox>
+        </HBox>
+        <JFXDrawersStack fx:id="drawersStack" VBox.vgrow="ALWAYS">
+            <JFXTabPane fx:id="tabPane"/>
+        </JFXDrawersStack>
+    </VBox>
+</StackPane>

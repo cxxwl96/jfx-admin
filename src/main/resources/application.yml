@@ -1,0 +1,45 @@
+# DataSource Configuration
+spring:
+  datasource:
+    name: h2
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:file:./db/jfx-admin
+    username: ENC(LvGIcsw6Wf6dzt3XatXZZA==)
+    password: ENC(rGW1ekhUiNiXkHeFvGUr6Yv8ogSuJnz1eKp7T6/1gLo=)
+#  h2:
+#    console:
+#      enabled: false
+#  sql:
+#    init:
+#      encoding: utf-8
+#      mode: always
+#      platform: all
+#      schema-locations: classpath:db/schema-all.sql
+#      data-locations: classpath:db/data-all.sql
+
+# MyBatisPlus Configuration
+mybatis-plus:
+  mapper-locations:
+    - classpath*:com/jad/**/mapper/xml/*.xml # 配置mapper xml文件的路径
+  type-aliases-package: com.jad.**.mapper
+  configuration:
+    default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler # 使用ordinal处理枚举转换
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # mybatis日志，打印sql
+
+# jasypt Configuration
+jasypt:
+  encryptor:
+    algorithm: PBEWithMD5AndDES
+    iv-generator-classname: org.jasypt.iv.NoIvGenerator
+
+# App Configuration
+app:
+  info:
+    appLogo: assets/imgs/logo.png # 应用logo
+    appName: JFX Admin # 应用名
+    appDescription: 欢迎使用JavaFX-Admin后台权限管理系统 # 应用描述
+    version: 1.0.0
+    url: https://github.com/cxxwl96/jfx-admin
+    email: cxxwl96@sina.com
+  setting:
+    fontIconPrefix: icon.svg # FontIcon前缀

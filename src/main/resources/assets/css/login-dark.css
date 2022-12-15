@@ -1,0 +1,115 @@
+/*
+ * Copyright (c) 2021-2022, jad (cxxwl96@sina.com).
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*******************************************************************************
+ *                                                                             *
+ * login                                                    *
+ *                                                                             *
+ ******************************************************************************/
+
+.root {
+
+    -fx-font-family: "Microsoft YaHei";
+
+    /**全局定义主题颜色变量 默认*/
+    -fx-main-base: #1B2431;
+    -fx-card-base: #273142;
+    -fx-bar-base: #323D4E;
+
+    /* 用于突出显示/突出显示对象。例如：selected *文本；菜单，列表，树和表中的选定项目；进度条*/
+    -fx-accent-color: #4880ff;
+    -fx-accent-suspension-color: rgba(72, 128, 255, 0.13);
+    /*边框颜色*/
+    -fx-border-base: #313D4F;
+    -fx-cell-border-base: rgba(151, 151, 151, .4);
+
+    -fx-font-base14: 14px;
+    -fx-font-base16: 16px;
+
+    /**字体颜色*/
+    -fx-dark-text-color: #ffffff;
+    -fx-light-text-color: #404040;
+    -fx-text-color: ladder(-fx-main-base, -fx-dark-text-color 29%, -fx-light-text-color 30%);
+
+    -fx-icon-svg-color: rgb(3, 115, 248);
+
+    /*颜色*/
+    -fx-color-red: #f50f50;
+    -fx-color-orange: #eba649;
+    -fx-color-blue: #448ef7;
+    -fx-color-green: #87d068;
+}
+
+.backgroundPane {
+    -fx-background-color: -fx-card-base;
+}
+
+.login-root {
+    -fx-background-image: url('../imgs/login-bg-dark.png');
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+    -fx-min-width: 800;
+    -fx-min-height: 520;
+    -fx-pref-width: 800;
+    -fx-pref-height: 520;
+}
+
+.app-title {
+    -fx-text-fill: #ecf0ff;
+    -fx-font-size: 37;
+    -fx-font-family: "Microsoft YaHei Bold";
+    -fx-wrap-text: true;
+}
+
+.app-description {
+    -fx-text-fill: #ecf0ff;
+    -fx-font-size: 24;
+    -fx-font-family: "Microsoft YaHei Bold";
+    -fx-wrap-text: true;
+}
+
+.login-box {
+    -fx-pref-width: 370;
+    -fx-pref-height: 420;
+    -fx-max-width: 590;
+    -fx-max-height: 650;
+    -fx-background-color: -fx-main-base;
+    -fx-effect: dropshadow(gaussian, -fx-accent-suspension-color, 12, 0.2, 0, 0);
+}
+
+.login-title {
+    -fx-font-size: 25;
+    -fx-font-family: "Microsoft YaHei Bold";
+    -fx-wrap-text: true;
+    -fx-alignment: center;
+}
+
+.login-input {
+    -fx-background-size: 16;
+    -fx-font-size: 16;
+}
+
+.login-button {
+    -fx-pref-height: 50;
+    -fx-background-color: linear-gradient(#6f80f2, #374CE6);
+    -fx-background-radius: 25;
+    -fx-text-fill: #fffefe;
+    -fx-font-size: 16;
+    -fx-content-display: center;
+    -jfx-button-type: RAISED;
+    -fx-cursor: hand;
+}

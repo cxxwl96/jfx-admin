@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+<ScrollPane fx:id="scroll" fitToWidth="true" fitToHeight="true" xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <VBox fx:id="listView" styleClass="backgroundPane,jfx-selector-list-view"/>
+</ScrollPane>

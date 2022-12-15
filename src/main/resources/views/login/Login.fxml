@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.cxxwl96.jfx.admin.client.component.JFXIcon?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.validation.RequiredFieldValidator?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<HBox styleClass="login-root" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1">
+    <VBox prefWidth="200.0" HBox.hgrow="ALWAYS">
+        <StackPane maxHeight="190.0" minHeight="128.0" prefHeight="128.0">
+            <padding>
+                <Insets left="20.0" right="20.0"/>
+            </padding>
+            <Label fx:id="appTitle" styleClass="app-title"/>
+        </StackPane>
+        <StackPane VBox.vgrow="ALWAYS"/>
+        <StackPane maxHeight="350.0" minHeight="221.0" prefHeight="221.0">
+            <padding>
+                <Insets left="20.0" right="20.0"/>
+            </padding>
+            <Label fx:id="appDescription" styleClass="app-description"/>
+        </StackPane>
+    </VBox>
+    <VBox alignment="CENTER" prefWidth="200.0" HBox.hgrow="ALWAYS">
+        <StackPane fx:id="loginBox" styleClass="login-box" VBox.vgrow="ALWAYS">
+            <VBox.margin>
+                <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+            </VBox.margin>
+            <VBox alignment="CENTER" spacing="20.0" StackPane.alignment="CENTER">
+                <padding>
+                    <Insets bottom="40.0" left="20.0" right="20.0" top="40.0"/>
+                </padding>
+                <Label fx:id="loginTitle" styleClass="login-title">
+                    <effect>
+                        <Glow level="0.27"/>
+                    </effect>
+                </Label>
+                <GridPane VBox.vgrow="ALWAYS" hgap="10">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="ALWAYS"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="ALWAYS"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="80.0" valignment="BOTTOM" vgrow="ALWAYS"/>
+                        <RowConstraints minHeight="80.0" valignment="BOTTOM" vgrow="ALWAYS"/>
+                        <RowConstraints minHeight="80.0" valignment="BOTTOM" vgrow="ALWAYS"/>
+                    </rowConstraints>
+                    <HBox alignment="BOTTOM_CENTER" spacing="10" GridPane.hgrow="ALWAYS"
+                          GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                        <JFXIcon iconCode="user-name"/>
+                        <JFXTextField fx:id="textUsername" styleClass="login-input" labelFloat="true" promptText="账号"
+                                      HBox.hgrow="ALWAYS">
+                            <validators>
+                                <RequiredFieldValidator message="请输入账号">
+                                    <JFXIcon iconCode="warning"/>
+                                </RequiredFieldValidator>
+                            </validators>
+                        </JFXTextField>
+                    </HBox>
+                    <HBox alignment="BOTTOM_CENTER" spacing="10" GridPane.hgrow="ALWAYS"
+                          GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                        <JFXIcon iconCode="password"/>
+                        <JFXPasswordField fx:id="textPassword" styleClass="login-input" labelFloat="true"
+                                          promptText="密码" HBox.hgrow="ALWAYS">
+                            <validators>
+                                <RequiredFieldValidator message="请输入密码">
+                                    <JFXIcon iconCode="warning"/>
+                                </RequiredFieldValidator>
+                            </validators>
+                        </JFXPasswordField>
+                    </HBox>
+                    <ImageView fx:id="imgCaptcha" fitHeight="45.0" fitWidth="163.0" pickOnBounds="true"
+                               smooth="false" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="1">
+                        <cursor>
+                            <Cursor fx:constant="HAND"/>
+                        </cursor>
+                    </ImageView>
+                    <JFXTextField fx:id="textCaptcha" styleClass="login-input" labelFloat="true" promptText="账号"
+                                  GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                                  GridPane.columnSpan="1">
+                        <validators>
+                            <RequiredFieldValidator message="请输入验证码">
+                                <JFXIcon iconCode="warning"/>
+                            </RequiredFieldValidator>
+                        </validators>
+                    </JFXTextField>
+                </GridPane>
+                <JFXButton fx:id="loginBtn" styleClass="login-button" VBox.vgrow="ALWAYS" text="登  录"
+                           maxWidth="1.7976931348623157E308">
+                    <VBox.margin>
+                        <Insets top="20.0"/>
+                    </VBox.margin>
+                </JFXButton>
+            </VBox>
+            <JFXSpinner fx:id="loginSpinner" styleClass="blue-spinner" visible="false" radius="18.0"
+                        startingAngle="90.0"/>
+        </StackPane>
+    </VBox>
+</HBox>

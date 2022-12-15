@@ -1,0 +1,1519 @@
+/*
+ * Copyright (c) 2021-2022, jad (cxxwl96@sina.com).
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.root {
+
+    -fx-font-family: "Microsoft YaHei";
+
+    /**全局定义主题颜色变量 默认*/
+    -fx-main-base: derive(#4e6ef2, 0%);
+    -fx-card-base: #ffffff;
+    -fx-bar-base: #ffffff;
+
+    /* 用于突出显示/突出显示对象。例如：selected *文本；菜单，列表，树和表中的选定项目；进度条*/
+    -fx-accent-color: derive(#4e6ef2, 0%);
+    -fx-accent-suspension-color: rgba(72, 128, 255, 0.13);
+    /*边框颜色*/
+    -fx-border-base: rgba(185, 185, 185, .8);
+    -fx-cell-border-base: rgba(185, 185, 185, 0.7);
+
+    -fx-font-base14: 14px;
+    -fx-font-base16: 16px;
+
+    /**字体颜色*/
+    -fx-dark-prompt-text-color: #ffffff;
+    -fx-light-prompt-text-color: #737373;
+    -fx-dark-text-color: #ffffff;
+    -fx-light-text-color: #404040;
+    -fx-text-color: ladder(-fx-main-base, -fx-dark-text-color 29%, -fx-light-text-color 30%);
+
+    -fx-icon-svg-color: rgb(3, 115, 248);
+
+    /*颜色*/
+    -fx-color-red: #f50f50;
+    -fx-color-orange: #eba649;
+    -fx-color-blue: #448ef7;
+    -fx-color-green: #87d068;
+}
+
+.backgroundPane {
+    -fx-background-color: -fx-card-base;
+}
+
+.tool-pane {
+    -fx-border-color: -fx-border-base;
+    -fx-border-width: 0 0 0.45 0;
+}
+
+.jfx-svg-glyph {
+    -fx-background-color: -fx-text-color;
+    -jfx-size: 15px
+}
+
+.glyph-icon {
+    -fx-fill: -fx-text-color;
+}
+
+.card-pane {
+    -fx-background-color: -fx-card-base;
+    -fx-padding: 20;
+    -fx-background-radius: 5;
+    -fx-border-color: transparent;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5;
+    -fx-effect: dropshadow(gaussian, #8f959c, 12, 0.2, 0, 0);
+
+}
+
+
+/*******************************************************************************
+*                                                                              *
+* text和label                                                                *
+*                                                                              *
+*******************************************************************************/
+.label {
+    -fx-text-fill: -fx-text-color;
+    -fx-font-family: "Microsoft YaHei";
+    -fx-font-weight: 100;
+    -fx-font-size: 14px;
+}
+
+.title-label {
+    -fx-font-size: 16;
+    -fx-padding: 10 0 10 0;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * JFX Pop Up                                                                  *
+ *                                                                             *
+ ******************************************************************************/
+
+.jfx-popup-overlay-pane {
+    -fx-background-color: transparent;
+}
+
+.jfx-popup-container {
+    -fx-background-color: -fx-card-base;
+    -fx-border-color: -fx-border-base;
+    -fx-border-width: 1px;
+}
+
+
+.jfx-snackbar-content {
+    -fx-background-color: #323232;
+}
+
+.jfx-snackbar-toast {
+    -fx-text-fill: WHITE;
+}
+
+.jfx-snackbar-action {
+    -fx-text-fill: #ff4081;
+}
+
+
+/*******************************************************************************
+*                                                                              *
+* JFX Button                                                                   *
+*                                                                              *
+*******************************************************************************/
+
+.jfx-button {
+    -fx-padding: 0.47em 0.47em;
+    -fx-background-color: -fx-accent-color;
+    -fx-text-fill: white;
+    -jfx-button-type: RAISED;
+    -fx-border-radius: 2;
+    -fx-background-radius: 2;
+    -fx-cursor: hand;
+}
+
+.jfx-button .jfx-svg-glyph {
+    -fx-background-color: white;
+}
+
+.jfx-button > MaterialDesignIconView, .toggle-button > MaterialDesignIconView {
+    -fx-fill: -fx-text-color;
+    -fx-text-fill: -fx-text-color;
+    -fx-prompt-text-fill: -fx-text-color;
+    -jfx-size: 16px;
+}
+
+.jfx-button-flat {
+    -fx-background-color: TRANSPARENT;
+    -fx-text-fill: -fx-text-color;
+    -fx-border-color: -fx-border-base;
+}
+
+.jfx-button-flat .jfx-svg-glyph {
+    -fx-background-color: -fx-text-color;
+}
+
+.jfx-button-primary {
+    -fx-background-color: -fx-color-blue;
+}
+
+.jfx-button-success {
+    -fx-background-color: -fx-color-green;
+}
+
+.jfx-button-warning {
+    -fx-background-color: -fx-color-orange;
+}
+
+.jfx-button-danger {
+    -fx-background-color: -fx-color-red;
+}
+
+.jfx-toggle-button {
+    -jfx-toggle-color: -fx-accent-color;
+    -fx-text-fill: -fx-text-color;
+}
+
+.jfx-label-button {
+    -fx-pref-width: 30;
+    -fx-pref-height: 30;
+    -fx-padding: 0.47em 0.47em;
+    -fx-background-color: -fx-card-base;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+    -fx-text-fill: -fx-text-color;
+    -fx-border-color: -fx-border-base;
+    -fx-border-width: 0.5;
+    -fx-cursor: hand;
+}
+
+.jfx-label-button .jfx-svg-glyph {
+    -fx-background-color: -fx-text-color;
+}
+
+.jfx-label-button:hover {
+    -fx-background-color: -fx-border-base;
+}
+
+.jfx-tag {
+    -fx-border-width: 1;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-border-color: -fx-border-base;
+    -fx-background-color: derive(-fx-cell-border-base, 50%);
+    -fx-text-fill: -fx-text-color;
+}
+
+.jfx-tag .label {
+    -fx-font-size: 14;
+}
+
+.jfx-tag-primary, .jfx-tag-primary .label {
+    -fx-border-color: -fx-color-blue;
+    -fx-background-color: -fx-color-blue;
+    -fx-text-fill: #f0f0f0;
+}
+
+.jfx-tag-success, .jfx-tag-success .label {
+    -fx-border-color: -fx-color-green;
+    -fx-background-color: -fx-color-green;
+    -fx-text-fill: #f0f0f0;
+}
+
+.jfx-tag-warning, .jfx-tag-warning .label {
+    -fx-border-color: -fx-color-orange;
+    -fx-background-color: -fx-color-orange;
+    -fx-text-fill: #f0f0f0;
+}
+
+.jfx-tag-danger, .jfx-tag-danger .label {
+    -fx-border-color: -fx-color-red;
+    -fx-background-color: -fx-color-red;
+    -fx-text-fill: #f0f0f0;
+}
+
+.jfx-tag-primary .jfx-svg-glyph, .jfx-tag-success .jfx-svg-glyph, .jfx-tag-warning .jfx-svg-glyph, .jfx-tag-danger .jfx-svg-glyph {
+    -fx-background-color: #f0f0f0;
+}
+
+.jfx-tag .jfx-tag-close {
+    -fx-background-color: #f0f0f0;
+    -fx-font-size: 5;
+    -fx-padding: 0, 0, 0, 10;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * JFX CheckBox                                                                *
+ *                                                                             *
+ ******************************************************************************/
+.jfx-check-box {
+    -jfx-unchecked-color: -fx-border-base;
+    -jfx-checked-color: -fx-main-base;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Hyperlink                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+.hyperlink {
+    -fx-padding: 0.166667em 0.25em 0.166667em 0.25em; /* 2 3 2 3 */
+    -fx-cursor: hand;
+    -fx-content-display: LEFT;
+    -fx-border-color: transparent;
+    -fx-border-width: 1px;
+}
+
+.hyperlink {
+    -fx-text-fill: -fx-accent-color;
+}
+
+.hyperlink:hover {
+    -fx-text-fill: -fx-text-color;
+}
+
+.hyperlink:hover,
+.hyperlink:visited,
+.hyperlink:hover:visited {
+    -fx-underline: false;
+}
+
+.hyperlink:visited:armed {
+    -fx-underline: false;
+}
+
+.hyperlink:focused {
+    -fx-border-color: transparent;
+    -fx-border-width: 1px;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * JFX Radio Button                                                            *
+ *                                                                             *
+ ******************************************************************************/
+.radio-button {
+    -fx-text-fill: -fx-light-text-color;
+}
+
+.jfx-radio-button {
+    -jfx-selected-color: -fx-accent-color;
+    -fx-cursor: hand;
+}
+
+.left-pill {
+    -fx-text-fill: -fx-text-color;
+    -fx-background-insets: 0;
+    -fx-background-color: -fx-bar-base;
+    -fx-border-color: rgba(207, 207, 207, 0.5);
+    -fx-background-radius: 14 0 0 14;
+    -fx-border-radius: 14 0 0 14;
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.75em; /* 4 8 4 9 */
+}
+
+.center-pill {
+    -fx-text-fill: -fx-text-color;
+    -fx-background-color: -fx-bar-base;
+    -fx-border-color: rgba(207, 207, 207, 0.5);
+    -fx-border-width: 1 1 1 0;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+}
+
+.right-pill {
+    -fx-text-fill: -fx-text-color;
+    -fx-background-color: -fx-bar-base;
+    -fx-border-color: rgba(207, 207, 207, 0.5);
+    -fx-background-radius: 0 14 14 0;
+    -fx-border-radius: 0 14 14 0;
+    -fx-border-width: 1 1 1 0;
+    -fx-background-insets: 0;
+
+}
+
+.left-pill:hover {
+    -fx-background-color: derive(-fx-bar-base, -20%)
+}
+
+.left-pill:focused {
+    -fx-background-insets: 0;
+    -fx-background-radius: 14 0 0 14;
+}
+
+.left-pill:pressed {
+    -fx-background-color: derive(-fx-bar-base, -30%)
+}
+
+.center-pill:focused {
+    -fx-background-insets: 0;
+    -fx-background-radius: 0, 0, 0, 0, 0;
+}
+
+.center-pill:hover {
+    -fx-background-color: derive(-fx-bar-base, -20%)
+}
+
+.center-pill:pressed {
+    -fx-background-color: derive(-fx-bar-base, -30%)
+}
+
+.right-pill:focused {
+    -fx-background-insets: 0;
+    -fx-background-radius: 0 14 14 0;
+}
+
+.right-pill:hover {
+    -fx-background-color: derive(-fx-bar-base, -20%)
+}
+
+.right-pill:pressed {
+    -fx-background-color: derive(-fx-bar-base, -30%)
+}
+
+.toggle-button:selected .left-pill:focused {
+    -fx-background-insets: 0;
+    -fx-background-radius: 14 0 0 14;
+}
+
+.toggle-button:selected .center-pill:focused {
+    -fx-background-insets: 0;
+    -fx-background-radius: 0, 0, 0, 0;
+}
+
+.toggle-button:selected .right-pill:focused {
+    -fx-background-insets: 0;
+    -fx-background-radius: 0 14 14 0
+}
+
+
+/*******************************************************************************
+*                                                                              *
+* JFX Decorator                                                                *
+*                                                                              *
+*******************************************************************************/
+
+.jfx-decorator {
+    -fx-decorator-color: -fx-main-base;
+    -fx-background-color: -fx-main-base;
+    -fx-background-radius: 11;
+}
+
+.jfx-decorator .jfx-decorator-buttons-container {
+    -fx-background-color: -fx-decorator-color;
+}
+
+.jfx-decorator .resize-border {
+    -fx-border-color: -fx-decorator-color;
+    -fx-border-width: 0 4 4 4;
+}
+
+.jfx-decorator .jfx-decorator-title-container .jfx-decorator-text {
+    -fx-fill: white;
+    -fx-font-size: 16px;
+}
+
+.jfx-decorator .jfx-decorator-title-container .jfx-svg-glyph {
+    /*-fx-shape: "M933.49 506.51c0-20.993-13.279-39.672-36.435-51.25l-81.267-40.633 81.267-40.633c23.154-11.577 36.435-30.256 36.435-51.249s-13.279-39.672-36.435-51.25L571.565 108.75c-33.957-16.979-85.172-16.979-119.131 0l-325.49 162.746c-23.155 11.578-36.435 30.257-36.434 51.25 0 20.992 13.28 39.672 36.434 51.249l81.267 40.633-81.266 40.633c-23.155 11.577-36.435 30.257-36.435 51.25s13.28 39.671 36.434 51.249l92.247 46.123-92.247 46.124c-23.155 11.577-36.435 30.257-36.434 51.25 0 20.992 13.28 39.671 36.434 51.248l325.49 162.745c16.979 8.489 38.273 12.734 59.566 12.734 21.294 0 42.587-4.245 59.565-12.734l325.49-162.745c23.154-11.577 36.434-30.256 36.435-51.248 0-20.993-13.279-39.673-36.435-51.251l-92.246-46.123 92.246-46.123c23.155-11.578 36.435-30.258 36.435-51.25zM481.056 165.995c15.906-7.953 45.983-7.953 61.889 0l313.502 156.751-313.503 156.75c-15.905 7.953-45.982 7.953-61.888 0L167.554 322.745l313.502-156.75z m375.39 535.26L542.943 858.006c-15.904 7.953-45.981 7.952-61.887-0.001L167.554 701.254l123.191-61.595 161.689 80.845c16.979 8.489 38.273 12.734 59.566 12.734 21.294 0 42.587-4.245 59.565-12.734l161.689-80.845 123.192 61.596z m-313.503-37.994c-15.904 7.953-45.981 7.952-61.887-0.001L167.555 506.51l112.21-56.105 172.67 86.335c16.979 8.489 38.272 12.734 59.565 12.734s42.587-4.245 59.565-12.734l172.67-86.335 112.21 56.105-313.502 156.751z";*/
+    -jfx-size: 20px;
+    -fx-background-color: TRANSPARENT;
+    -fx-background-image: url('../imgs/logo.png');
+    -fx-background-size: 100% 100%;
+}
+
+.jfx-decorator-button {
+    -fx-fill: -fx-text-color;
+    -fx-text-fill: -fx-text-color;
+    -fx-prompt-text-fill: -fx-text-color;
+    -jfx-button-type: FLAT;
+    -fx-background-color: TRANSPARENT;
+    -fx-light-text-color: white
+}
+
+/*******************************************************************************
+*                                                                              *
+* JFX Hamburger Icon                                                           *
+*                                                                              *
+*******************************************************************************/
+
+.jfx-hamburger {
+    -fx-padding: 10.0;
+    -fx-spacing: 4px;
+    -fx-cursor: hand;
+}
+
+.jfx-hamburger StackPane {
+    -fx-pref-width: 40px;
+    -fx-pref-height: 4px;
+    -fx-background-color: -fx-text-color;
+    -fx-background-radius: 5px;
+}
+
+/*******************************************************************************
+*                                                                              *
+* JFX 滚动条                                                      *
+*                                                                              *
+*******************************************************************************/
+.corner, .track, .increment-arrow, .decrement-arrow, .increment-button, .decrement-button, .scroll-bar:vertical, .scroll-bar:horizontal {
+    -fx-background-color: TRANSPARENT;
+}
+
+
+.thumb {
+    -fx-background-color: ladder(-fx-main-base, rgba(255, 255, 255, .3) 29%, rgba(0, 0, 0, 0.3) 30%);
+    -fx-border-color: TRANSPARENT;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-width: 0.5;
+}
+
+
+/*******************************************************************************
+ *                                                                             *
+ * JFX Tool Bar                                                                *
+ *                                                                             *
+ ******************************************************************************/
+
+.jfx-tool-bar {
+    -fx-background-color: -fx-card-base;
+    -fx-border-color: -fx-border-base;
+    -fx-border-width: 0 0 1 0;
+    -fx-pref-width: 100.0%;
+    -fx-pref-height: 48.0px;
+}
+
+.jfx-tool-bar HBox {
+    -fx-alignment: center;
+    -fx-spacing: 7.0;
+    -fx-padding: 0 0 0 0;
+}
+
+
+.tool-bar-button {
+    -fx-fill: -fx-text-color;
+    -fx-text-fill: -fx-text-color;
+    -fx-prompt-text-fill: -fx-text-color;
+    -fx-pref-height: 40;
+    -fx-pref-width: 40;
+    -fx-border-width: 0;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -jfx-button-type: FLAT;
+    -fx-background-color: TRANSPARENT
+}
+
+.tool-bar-button > .jfx-svg-glyph {
+    -fx-fill: -fx-text-color;
+    -fx-text-fill: -fx-text-color;
+    -fx-prompt-text-fill: -fx-text-color;
+    -jfx-size: 20px;
+}
+
+.tool-bar-button:hover {
+    -fx-background-color: ladder(-fx-main-base, rgba(255, 255, 255, .2) 29%, rgba(0, 0, 0, .2) 30%);
+    -fx-cursor: hand;
+}
+
+.tool-bar-button:focused {
+    -fx-background-color: TRANSPARENT
+}
+
+.tool-bar-toggle {
+    -fx-fill: -fx-text-color;
+    -fx-text-fill: -fx-text-color;
+    -fx-pref-height: 32;
+    -fx-pref-width: 32;
+    -fx-background-radius: 16;
+    -fx-background-color: ladder(-fx-main-base, rgba(255, 255, 255, .2) 29%, rgba(0, 0, 0, .2) 30%);
+}
+
+.tool-bar-toggle > .jfx-svg-glyph {
+    -fx-fill: -fx-text-color;
+    -fx-text-fill: -fx-text-color;
+    -fx-prompt-text-fill: -fx-text-color;
+    -jfx-size: 20px;
+}
+
+/*******************************************************************************
+*                                                                              *
+* JFX TabPane                                                          *
+*                                                                              *
+*******************************************************************************/
+
+.jfx-tab-pane .tab-header-background {
+    -fx-background-color: -fx-card-base;
+}
+
+.jfx-tab-pane .tab-header-area .tab-down-button {
+    -fx-background-color: -fx-text-color;
+    -fx-min-width: 0.8em;
+    -fx-max-width: 0.8em;
+    -fx-min-height: 1.3em;
+    -fx-max-height: 1.3em;
+}
+
+.jfx-tab-pane .headers-region .tab-selected-line {
+    -fx-background-color: -fx-accent-color;
+    -fx-pref-height: 3px;
+}
+
+.jfx-tab-pane .headers-region .tab .tab-container .tab-label {
+    -fx-text-fill: -fx-text-color;
+    -fx-font-family: "Microsoft YaHei";
+    -fx-font-size: 15;
+    -fx-font-weight: 600;
+    -fx-graphic-text-gap: 10;
+    -fx-padding: 6 10 6 10;
+}
+
+.jfx-tab-pane .headers-region .tab:selected .tab-container .tab-label {
+    -fx-text-fill: -fx-text-color;
+
+}
+
+.jfx-tab-pane .headers-region .tab .tab-container .tab-close-button > .jfx-svg-glyph {
+    -fx-background-color: -fx-text-color;
+    -jfx-size: 10px;
+
+
+}
+
+.jfx-tab-pane .headers-region .tab {
+    -fx-pref-height: 50px;
+
+}
+
+.jfx-tab-pane .headers-region .tab:closable {
+    -fx-border-color: rgba(0, 0, 0, 0);
+}
+
+.jfx-tab-pane .headers-region .tab .tab-container .tab-close-button {
+    -fx-background-color: TRANSPARENT;
+    -fx-background-radius: 20;
+}
+
+.jfx-tab-pane .headers-region .tab .tab-container .tab-close-button:hover {
+    -fx-background-color: derive(-fx-text-color, 90%)
+
+}
+
+.jfx-tab-pane .headers-region .tab .tab-container .tab-close-button:focused {
+    -fx-background-color: TRANSPARENT;
+}
+
+.jfx-tab-pane .headers-region .tab:hover .tab-container .tab-close-button > .jfx-svg-glyph {
+    -fx-background-color: derive(-fx-text-color, 30%);
+}
+
+.jfx-tab-pane .headers-region .tab .tab-container .jfx-svg-glyph {
+    -fx-background-color: derive(-fx-text-color, 20%);
+    -jfx-size: 20;
+}
+
+
+.jfx-tab-pane .headers-region > .tab:hover {
+    -fx-background-color: derive(-fx-accent-suspension-color, 20%)
+}
+
+.jfx-tab-pane .headers-region > .tab:selected {
+    -fx-background-color: -fx-accent-suspension-color;
+}
+
+.tab-content {
+    -fx-background-color: -fx-card-base;
+}
+
+/*******************************************************************************
+*                                                                              *
+* JFX List View                                                                *
+*                                                                              *
+*******************************************************************************/
+
+
+.jfx-list-cell {
+    -fx-background-insets: 0.0;
+    -fx-text-fill: -fx-text-color;
+}
+
+.jfx-list-cell:odd,
+.jfx-list-cell:even {
+    -fx-background-color: transparent;
+}
+
+.jfx-list-cell:filled:hover,
+.jfx-list-cell:selected .label {
+    -fx-text-fill: #ffffff;
+}
+
+.jfx-list-cell .jfx-rippler {
+    -jfx-rippler-fill: #5264AE;
+}
+
+.jfx-list-cell:odd:selected > .jfx-rippler > StackPane,
+.jfx-list-cell:even:selected > .jfx-rippler > StackPane {
+    -fx-background-color: -fx-accent-color;
+    -fx-background-radius: 6;
+    -fx-border-color: -fx-accent-color;
+}
+
+.jfx-list-view {
+    -fx-background-color: transparent;
+}
+
+
+.navigation-list .jfx-list-cell {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+
+.navigation-list .jfx-list-cell .label {
+    -fx-graphic-text-gap: 15;
+    -fx-pref-height: 45;
+    -fx-padding: 0 0 0 25;
+}
+
+
+.navigation-list .jfx-list-cell .label > .jfx-svg-glyph {
+    -jfx-size: 20px;
+    -fx-alignment: center;
+    -fx-background-color: -fx-icon-svg-color;
+}
+
+.navigation-list .jfx-list-cell:odd:selected > .jfx-rippler > StackPane,
+.navigation-list .jfx-list-cell:even:selected > .jfx-rippler > StackPane {
+    -fx-background-color: -fx-accent-color;
+    -fx-background-insets: 0 20 0 20;
+    -fx-background-radius: 6;
+    -fx-border-color: -fx-accent-color;
+    -fx-border-width: 0 0 0 4;
+}
+
+.navigation-list {
+    -fx-background-radius: 0;
+    -fx-background-insets: 0.0;
+    -fx-background-color: -fx-card-base;
+    -jfx-cell-horizontal-margin: 0.0;
+    -jfx-cell-vertical-margin: 0.0;
+    -jfx-expanded: true;
+
+}
+
+.navigation-list .jfx-rippler {
+    -jfx-rippler-fill: derive(-fx-accent-color, -20%);
+}
+
+/*******************************************************************************
+*                                                                              *
+* JFX SUBLIST IMPORTANT                                                        *
+*                                                                              *
+*******************************************************************************/
+.sublist .scroll-bar:vertical .increment-arrow,
+.sublist .scroll-bar:vertical .decrement-arrow,
+.sublist .scroll-bar:vertical .increment-button,
+.sublist .scroll-bar:vertical .decrement-button {
+    -fx-padding: 0;
+}
+
+.sublist .scroll-bar:vertical .track,
+.sublist .scroll-bar:vertical .thumb {
+    -fx-background-color: -fx-text-color;
+}
+
+.sublist {
+
+    /* important to hide the list change of height */
+    -fx-background-radius: 0;
+    -fx-background-insets: 0.0;
+    -jfx-cell-horizontal-margin: 0.0;
+    -jfx-cell-vertical-margin: 0.0;
+    -jfx-expanded: true;
+    -fx-padding: 0;
+    -fx-background-color: TRANSPARENT;
+}
+
+
+.sublist .jfx-list-cell {
+    -fx-background-insets: 0.0;
+    -fx-padding: 0 0 0 35;
+    -fx-text-fill: -fx-text-color;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 0 0 0 0;
+}
+
+
+.sublist-header {
+    -fx-alignment: center-left;
+    -fx-padding: 0;
+}
+
+.sublist-header .sub-label {
+    -fx-padding: 0 0 0 0;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * TableView                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+.table-view, .tree-table-view {
+    /* Constants used throughout the tableview. */
+    -fx-background-color: -fx-card-base;
+    -fx-table-header-border-color: #700128;
+    -fx-table-cell-border-color: -fx-cell-border-base;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-border-width: 0.6;
+    -fx-border-color: -fx-border-base;
+    -fx-background-insets: 0;
+    -fx-padding: -0.9;
+}
+
+.table-view:focused {
+    -fx-background-insets: 0;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: -fx-accent-suspension-color;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-pref-height: 30;
+}
+
+/**列头行设置背景*/
+.table-view .column-header,
+.table-view .filler {
+    -fx-background-color: transparent;
+}
+
+/**TableView列头文本标签*/
+.table-view .column-header .label {
+    -fx-alignment: center;
+    -fx-font-family: "Microsoft YaHei";
+    -fx-font-weight: 300;
+    -fx-text-fill: -fx-text-color;
+    -fx-font-size: 14px;
+}
+
+/**TableView列头展示隐藏列按钮*/
+.table-view > .column-header-background > .show-hide-columns-button {
+    -fx-background-color: transparent;
+}
+
+/*表格内容区域*/
+.table-view .placeholder {
+    -fx-background-color: transparent;
+}
+
+
+.table-column {
+    -fx-pref-height: 30;
+    -fx-background-color: transparent;
+    -fx-alignment: center;
+    -fx-border-width: 0.4;
+    -fx-border-color: -fx-border-base;
+}
+
+/*表格内容区域每行的样式*/
+.table-view .table-row-cell {
+    -fx-border-color: -fx-cell-border-base;
+    -fx-border-width: 0 0 0.4 0;
+    -fx-background-color: transparent;
+}
+
+.table-view .table-row-cell .table-cell {
+    -fx-pref-height: 52;
+    -fx-alignment: center;
+    -fx-border-width: 0.4;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: transparent;
+}
+
+.table-row-cell .text {
+    -fx-fill: -fx-text-color;
+}
+
+/*TableView的单元之间去掉没有数据的竖线 */
+.table-view .table-row-cell:empty, .table-view .table-row-cell:empty .table-cell {
+    -fx-border-width: 0px;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: -fx-accent-suspension-color;
+
+}
+
+.table-view .table-row-cell:selected .table-cell {
+    -fx-border-color: -fx-cell-border-base;
+}
+
+/*******************************************************************************
+*                                                                              *
+* splitPane                                                                *
+*                                                                              *
+*******************************************************************************/
+.split-pane {
+    -fx-border-width: 0 0 0 0;
+    -fx-background-color: transparent;
+}
+
+.split-pane *.split-pane-divider {
+    -fx-background-color: transparent;
+    -fx-padding: 0 5 0 5; /* 0 3 0 3 */
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * TreeView and TreeCell                                                       *
+ *                                                                             *
+ ******************************************************************************/
+.tree-view {
+    -fx-background-color: transparent;
+}
+
+
+.tree-cell {
+    -fx-padding: 0.25em; /* 3 */
+    -fx-indent: 1em;
+    -fx-text-fill: -fx-text-color;
+    -fx-background-color: transparent;
+}
+
+.tree-cell:selected {
+    -fx-background-color: -fx-accent-suspension-color;
+    -fx-text-fill: -fx-accent-color;
+}
+
+.tree-cell > .tree-disclosure-node,
+.tree-table-row-cell > .tree-disclosure-node {
+    -fx-padding: 4 6 4 8;
+    -fx-background-color: transparent;
+}
+
+.tree-cell > .tree-disclosure-node > .arrow,
+.tree-table-row-cell > .tree-disclosure-node > .arrow {
+    -fx-background-color: -fx-text-color;
+    -fx-padding: 0.333333em 0.229em 0.333333em 0.229em; /* 4 */
+    -fx-shape: "M 0 -3.5 L 4 0 L 0 3.5 z";
+}
+
+.tree-cell:expanded > .tree-disclosure-node > .arrow,
+.tree-table-row-cell:expanded > .tree-disclosure-node > .arrow {
+    -fx-rotate: 90;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * SiderMenu TreeView and TreeCell                                             *
+ *                                                                             *
+ ******************************************************************************/
+#sider-menu {
+    -fx-background-color: -fx-card-base;
+}
+
+#sider-menu .tree-view {
+    -fx-background-color: transparent;
+}
+
+#sider-menu .tree-cell {
+    -fx-padding: 0.25em; /* 3 */
+    -fx-indent: 1em;
+    -fx-text-fill: -fx-text-color;
+    -fx-background-color: -fx-card-base;
+    -fx-cursor: hand;
+}
+
+#sider-menu .tree-cell:selected {
+    -fx-background-color: derive(-fx-accent-color, 50%);
+    -fx-text-fill: -fx-accent-color;
+}
+
+
+#sider-menu .tree-cell > .tree-disclosure-node,
+#sider-menu .tree-table-row-cell > .tree-disclosure-node {
+    -fx-padding: 4 6 4 8;
+    -fx-background-color: transparent;
+}
+
+#sider-menu .tree-cell > .tree-disclosure-node > .arrow,
+#sider-menu .tree-table-row-cell > .tree-disclosure-node > .arrow {
+    -fx-background-color: transparent;
+    -fx-padding: 0.333333em 0.229em 0.333333em 0.229em; /* 4 */
+    -fx-shape: "M 0 -3.5 L 4 0 L 0 3.5 z";
+}
+
+#sider-menu .tree-cell:expanded > .tree-disclosure-node > .arrow,
+#sider-menu .tree-table-row-cell:expanded > .tree-disclosure-node > .arrow {
+    -fx-rotate: null;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * JFXTextField                                                    *
+ *                                                                             *
+ ******************************************************************************/
+.jfx-text-field, .jfx-password-field, .jfx-text-area, .jfx-combo-box {
+    -fx-background-color: transparent;
+    -fx-font-family: "Microsoft YaHei";
+    -fx-font-weight: 400;
+    -fx-text-fill: -fx-text-color;
+    -fx-prompt-text-fill: -fx-light-prompt-text-color;
+    -fx-alignment: top-left;
+    -jfx-focus-color: -fx-accent-color;
+    -jfx-unfocus-color: -fx-light-prompt-text-color;
+}
+
+.jfx-text-field > .input-line,
+.jfx-password-field > .input-line,
+.jfx-text-area > .input-line,
+.jfx-combo-box > .input-line {
+    -fx-background-color: -jfx-unfocus-color;
+    -fx-pref-height: .45;
+    -fx-translate-y: 1px;
+}
+
+.jfx-text-field > .input-focused-line,
+.jfx-password-field > .input-focused-line,
+.jfx-text-area > .input-focused-line,
+.jfx-combo-box > .input-focused-line {
+    -fx-background-color: -jfx-focus-color;
+    -fx-pref-height: 1px;
+}
+
+.combo-box-popup > .list-view {
+    -fx-background-color: -fx-bar-base;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * JFX Selector                                                                *
+ *                                                                             *
+ ******************************************************************************/
+.jfx-selector {
+    -fx-border-color: -fx-border-base;
+}
+
+.jfx-selector-text-field > .input-line {
+    -fx-pref-height: 0;
+}
+
+.jfx-selector-text-field > .input-focused-line {
+    -fx-pref-height: 0px;
+}
+
+.jfx-selector-list-view .jfx-selector-list-view-item {
+    -fx-padding: 7;
+}
+
+.jfx-selector-list-view .unselected:hover {
+    -fx-background-color: -fx-accent-suspension-color;
+}
+
+.jfx-selector-list-view .selected {
+    -fx-background-color: -fx-accent-color;
+}
+
+.jfx-selector-list-view .selected .label {
+    -fx-text-fill: white;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * JFX Dialog Layout                                                           *
+ *                                                                             *
+ ******************************************************************************/
+
+
+.jfx-dialog, .jfx-dialog-layout {
+    -fx-background-color: -fx-card-base;
+}
+
+.jfx-dialog-overlay-pane, .jfx-alert-overlay {
+    -fx-background-color: rgba(0.0, 0.0, 0.0, 0.2);
+}
+
+.jfx-dialog-content, .jfx-alert-content-container {
+    -fx-background-color: transparent;
+    -fx-border-width: 1px;
+}
+
+.jfx-layout-heading .label {
+    -fx-font-size: 16px;
+}
+
+/*******************************************************************************
+*                                                                              *
+* Error Facade                                                                 *
+*                                                                              *
+*******************************************************************************/
+
+.error-label {
+    -fx-text-fill: #D34336;
+    -fx-font-size: 0.75em;
+    -fx-font-weight: bold;
+}
+
+.error-icon {
+    -fx-fill: #D34336;
+    -fx-font-size: 1.0em;
+}
+
+.jfx-text-field:error, .jfx-password-field:error, .jfx-text-area:error, .jfx-combo-box:error {
+    -jfx-focus-color: #D34336;
+    -jfx-unfocus-color: #D34336;
+}
+
+.jfx-text-field .error-label, .jfx-password-field .error-label, .jfx-text-area .error-label {
+    -fx-text-fill: #D34336;
+    -fx-font-size: 0.8em;
+    -fx-font-family: -fx-font-family
+}
+
+.jfx-text-field .error-icon, .jfx-password-field .error-icon, .jfx-text-area .error-icon {
+    -fx-fill: #D34336;
+    -fx-font-size: 1.0em;
+}
+
+.jfx-scroll-pane .main-header {
+    /*-fx-background-image: url("../bg1.jpg");*/
+}
+
+.jfx-scroll-pane .condensed-header {
+    /*-fx-background-image: url("../bg4.jpg");*/
+}
+
+.scroll-pane {
+    -fx-background-color: TRANSPARENT;
+}
+
+.scroll-pane:focused {
+    -fx-background-color: TRANSPARENT;
+}
+
+.jfx-flow-pane {
+    -fx-background-color: -fx-card-base;
+}
+
+/*******************************************************************************
+*                                                                              *
+* JFX Spinner                                                                  *
+*                                                                              *
+*******************************************************************************/
+
+.jfx-spinner .arc {
+    -fx-stroke-width: 3.0;
+}
+
+.first-spinner {
+    -jfx-radius: 20;
+}
+
+.first-spinner .arc {
+    -fx-stroke-width: 5.0;
+}
+
+.second-spinner {
+    -jfx-radius: 30;
+}
+
+.second-spinner .arc {
+    -fx-stroke-width: 5.0;
+}
+
+.third-spinner {
+    -jfx-radius: 40;
+}
+
+.third-spinner .arc {
+    -fx-stroke-width: 5.0;
+}
+
+.fourth-spinner {
+    -jfx-radius: 50;
+}
+
+.fourth-spinner .arc {
+    -fx-stroke-width: 5.0;
+}
+
+.fifth-spinner {
+    -jfx-radius: 60;
+}
+
+.fifth-spinner .arc {
+    -fx-stroke-width: 5.0;
+}
+
+.sixth-spinner {
+    -jfx-radius: 70;
+}
+
+.sixth-spinner .arc {
+    -fx-stroke-width: 5.0;
+}
+
+.seventh-spinner {
+    -jfx-radius: 80;
+}
+
+.seventh-spinner .arc {
+    -fx-stroke-width: 5.0;
+}
+
+.blue-spinner .arc {
+    -fx-stroke: #4285f4;
+}
+
+.blue-spinner .track {
+    -fx-stroke: #d0d0d0;
+}
+
+.red-spinner .arc {
+    -fx-stroke: #db4437;
+}
+
+.green-spinner .arc {
+    -fx-stroke: #0F9D58;
+}
+
+.yellow-spinner .arc {
+    -fx-stroke: #f4b400;
+}
+
+.materialDesign-purple:indeterminate .arc {
+    -fx-stroke: #ab47bc;
+}
+
+.materialDesign-blue .arc {
+    -fx-stroke: #2962ff;
+}
+
+.materialDesign-blue .percentage {
+    -fx-fill: #ab47bc;
+}
+
+.materialDesign-cyan .arc {
+    -fx-stroke: #00b8d4;
+}
+
+.materialDesign-green .arc {
+    -fx-stroke: #00c853;
+}
+
+.materialDesign-green .text {
+    visibility: false;
+}
+
+.materialDesign-yellow .arc {
+    -fx-stroke: #ffd600;
+}
+
+.materialDesign-orange .arc {
+    -fx-stroke: #ff6d00;
+}
+
+.materialDesign-red .arc {
+    -fx-stroke: #d50000;
+}
+
+
+/*******************************************************************************
+*                                                                              *
+* tile                                                                  *
+*                                                                              *
+*******************************************************************************/
+.tile {
+    -BACKGROUND: rgb(255, 255, 255);
+    -FOREGROUND: rgb(52, 52, 52);
+    -GRAY: rgb(139, 144, 146);
+    -RED: rgb(229, 80, 76);
+    -LIGHT_RED: rgb(255, 84, 56);
+    -GREEN: rgb(143, 198, 94);
+    -LIGHT_GREEN: rgb(132, 228, 50);
+    -BLUE: rgb(55, 179, 252);
+    -DARK_BLUE: rgb(55, 94, 252);
+    -ORANGE: rgb(237, 162, 57);
+    -YELLOW_ORANGE: rgb(229, 198, 76);
+    -YELLOW: rgb(229, 229, 76);
+    -MAGENTA: rgb(198, 75, 232);
+    -PINK: rgb(233, 14, 139);
+
+    -foreground-color: -FOREGROUND;
+
+    -fx-effect: dropshadow(gaussian, #8f959c, 12, 0, 0, 0);
+
+}
+
+.tile .chart-vertical-grid-lines {
+    -fx-stroke: #9d9d9d;
+    -fx-stroke-dash-array: null;
+}
+
+.tile .chart-horizontal-grid-lines {
+    -fx-stroke: #9d9d9d;
+    -fx-stroke-dash-array: null;
+}
+
+.tile .axis {
+    AXIS_COLOR: #454545;
+    -fx-tick-label-fill: #454545;
+}
+
+.tile .axis-label {
+    -fx-text-fill: #ff0000;
+}
+
+
+#status-success-label {
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #1ea681;
+    -fx-background-radius: 10;
+    -fx-padding: 5 10 5 10;
+}
+
+#status-error-label {
+    -fx-background-color: #e63c53;
+    -fx-background-radius: 10;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 5 10 5 10;
+}
+
+.icons-badge .badge-pane {
+    -fx-background-color: #ff4081;
+    -fx-background-radius: 20;
+    -fx-pref-width: 20;
+    -fx-pref-height: 20;
+    -fx-alignment: center;
+}
+
+.icons-badge Label {
+    -fx-font-size: 14.0px;
+    -fx-text-fill: WHITE;
+}
+
+/*******************************************************************************
+*                                                                              *
+* JFXDatePicker                                                                *
+*                                                                              *
+*******************************************************************************/
+.jfx-date-picker {
+    -jfx-default-color: -fx-accent-color;
+}
+
+.jfx-date-picker,
+.jfx-date-picker:focused,
+.jfx-date-picker:focused:editable {
+    -fx-background-color: TRANSPARENT, TRANSPARENT, TRANSPARENT, TRANSPARENT;
+}
+
+.jfx-date-picker > .arrow-button,
+.jfx-date-picker:editable > .arrow-button,
+.jfx-date-picker:focused > .arrow-button,
+.jfx-date-picker:editable:focused > .arrow-button {
+    -fx-background-color: TRANSPARENT;
+    -fx-padding: 1 8 1 8;
+}
+
+.jfx-date-picker > .arrow-button > .jfx-svg-glyph {
+    -fx-background-color: -fx-light-text-color;
+}
+
+.date-picker-popup {
+    -fx-background-color: -fx-bar-base;
+}
+
+.date-picker-popup > .month-year-pane {
+    -fx-background-color: -fx-main-base;
+}
+
+.date-picker-popup > * > .spinner {
+    -fx-spacing: 0.25em; /* 3 */
+    -fx-alignment: CENTER;
+    -fx-fill-height: false;
+    -fx-background-color: transparent;
+}
+
+.date-picker-popup > * > .spinner > .label {
+    -fx-alignment: CENTER;
+}
+
+.date-picker-popup > * > .date-picker-list-view > .virtual-flow > .clipped-container > .sheet > .data-picker-list-cell {
+    -fx-font-size: 16;
+    -fx-font-weight: NORMAL;
+    -fx-background-color: -fx-bar-base;
+    -fx-alignment: center;
+    -fx-text-fill: -fx-light-text-color;
+}
+
+.date-picker-popup > * > .date-picker-list-view > .virtual-flow > .clipped-container > .sheet > .data-picker-list-cell > .jfx-rippler {
+    -jfx-rippler-fill: grey;
+}
+
+.date-picker-popup > * > .date-picker-list-view > .virtual-flow > .clipped-container > .sheet > .data-picker-list-cell:hover {
+    -fx-background-color: -fx-bar-base;
+}
+
+.date-picker-popup > * > .date-picker-list-view > .virtual-flow > .clipped-container > .sheet > .data-picker-list-cell:selected-year {
+    -fx-font-size: 24;
+    -fx-font-weight: BOLD;
+    -fx-text-fill: -fx-light-text-color;
+}
+
+/*******************************************************************************
+*                                                                              *
+* GridPaneDetail                                                               *
+*                                                                              *
+*******************************************************************************/
+.grid-pane-detail {
+    -fx-background-color: white;
+    -fx-border-color: -fx-border-base;
+    -fx-border-width: 0.3;
+}
+
+.grid-pane-detail .cell {
+    -fx-border-color: -fx-border-base;
+    -fx-border-width: 0.3;
+    -fx-wrap-text: true;
+}
+
+.grid-pane-detail .cell-title {
+    -fx-background-color: -fx-accent-suspension-color;
+    -fx-text-alignment: left;
+}
+
+.grid-pane-detail .cell-value {
+    -fx-background-color: white;
+}
+
+/*******************************************************************************
+*                                                                              *
+* GridPaneForm                                                                 *
+*                                                                              *
+*******************************************************************************/
+.grid-pane-form {
+    -fx-background-color: -fx-card-base;
+}
+
+.grid-pane-form .hbox {
+    -fx-padding: 10, 0, 10, 0;
+    -fx-spacing: 10;
+}
+
+.grid-pane-form .cell {
+    -fx-wrap-text: false;
+}
+
+.grid-pane-form .cell-title {
+    -fx-alignment: center-right;
+    -fx-text-alignment: right;
+}
+
+.grid-pane-form .cell-title-help {
+    -fx-cursor: hand;
+}
+
+.grid-pane-form .cell-value {
+}
+
+.always-show {
+}
+
+.menu-show {
+}
+
+.button-show {
+}
+
+.http-show {
+}
+
+/*******************************************************************************
+*                                                                              *
+* JfxContent                                                                   *
+*                                                                              *
+*******************************************************************************/
+.jfx-content {
+    -fx-padding: 15 20 15 20;
+}
+
+/*******************************************************************************
+*                                                                              *
+* JfxContextMenu                                                               *
+*                                                                              *
+*******************************************************************************/
+.context-menu {
+
+}
+
+.menu-item {
+    -fx-background-color: TRANSPARENT;
+}
+
+.menu-item:hover {
+    -fx-background-color: -fx-accent-suspension-color;
+}
+
+/*******************************************************************************
+*                                                                              *
+* Pagination                                                                   *
+*                                                                              *
+*******************************************************************************/
+
+.pagination > .pagination-control > .control-box > .bullet-button:selected {
+    -fx-base: -fx-accent-color;
+    -fx-text-fill: #ffffff;
+}
+
+.pagination > .pagination-control > .control-box > .number-button:selected {
+    -fx-base: -fx-accent-color;
+    -fx-text-fill: #ffffff;
+}
+
+/*******************************************************
+*                           						   *
+* JFXSlider 					                	   *
+*                          							   *
+*******************************************************/
+
+.jfx-slider {
+    -jfx-default-thumb: -fx-main-base;
+    -jfx-default-track: -fx-border-base;
+}
+
+.jfx-slider .track,
+.jfx-slider:vertical .track {
+    -fx-background-color: -jfx-default-track;
+}
+
+.jfx-slider:min .thumb,
+.jfx-slider:min:focused .thumb {
+    -fx-background-color: -jfx-default-track;
+}
+
+.jfx-slider:min .animated-thumb {
+    -fx-background-color: -jfx-default-track;
+}
+
+/*******************************************************
+*                           						   *
+* separator                  						   *
+*                          							   *
+*******************************************************/
+
+.separator {
+    -fx-border-width: 0.45;
+    -fx-border-color: -fx-border-base;
+}

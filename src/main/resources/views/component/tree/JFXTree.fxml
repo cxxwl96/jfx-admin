@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.cxxwl96.jfx.admin.client.component.JFXIcon?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<StackPane styleClass="backgroundPane" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1">
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+    </padding>
+    <VBox spacing="15.0">
+        <HBox>
+            <Label fx:id="titleLabel" styleClass="title-label"/>
+        </HBox>
+        <HBox spacing="10.0">
+            <HBox>
+                <JFXTextField fx:id="searchTextField" promptText="输入关键字进行过滤" HBox.hgrow="ALWAYS" minWidth="160"/>
+                <Hyperlink fx:id="clear" text="清空"/>
+            </HBox>
+            <HBox fx:id="selectMenuPane">
+                <Separator orientation="VERTICAL"/>
+                <Hyperlink fx:id="selectAll" text="全选"/>
+                <Hyperlink fx:id="selectReverse" text="反选"/>
+                <Hyperlink fx:id="selectNone" text="全不选"/>
+            </HBox>
+            <Label fx:id="compressBtn" contentDisplay="GRAPHIC_ONLY" maxHeight="1.7976931348623157E308"
+                   HBox.hgrow="ALWAYS">
+                <cursor>
+                    <Cursor fx:constant="HAND"/>
+                </cursor>
+                <graphic>
+                    <JFXIcon iconCode="compress"/>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="收缩"/>
+                </tooltip>
+            </Label>
+            <Label fx:id="expandBtn" contentDisplay="GRAPHIC_ONLY" maxHeight="1.7976931348623157E308"
+                   HBox.hgrow="ALWAYS">
+                <cursor>
+                    <Cursor fx:constant="HAND"/>
+                </cursor>
+                <graphic>
+                    <JFXIcon iconCode="expand"/>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="展开"/>
+                </tooltip>
+            </Label>
+        </HBox>
+        <StackPane VBox.vgrow="ALWAYS">
+            <JFXTreeView fx:id="treeView"/>
+            <JFXSpinner fx:id="spinner" radius="18.0" startingAngle="90.0" styleClass="blue-spinner"
+                        visible="false"/>
+        </StackPane>
+    </VBox>
+</StackPane>
