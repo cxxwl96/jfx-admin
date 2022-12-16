@@ -105,13 +105,17 @@ https://openjfx.cn/scene-builder/
 -   执行命令
 
 ```sh
-java -Dpw.salt=cxxwl96@sina.com -Djasypt.encryptor.password=cxxwl96@sina.com -jar jfx-admin-1.0.0.jar
+java -Dpw.salt=cxxwl96@sina.com -Djasypt.encryptor.password=cxxwl96@sina.com -Dfile.encoding=utf-8 -jar jfx-admin-1.0.0.jar
 ```
 
 -   用户
     1.  账号：administer（超级管理员），密码：cxxwl96@sina.com
     2.  账号：admin（系统管理员），密码：123456
     3.  账号：test（游客），密码：123456
+
+# Download
+
+Release：[https://github.com/cxxwl96/jfx-admin/releases](https://github.com/cxxwl96/jfx-admin/releases)
 
 # 演示图
 

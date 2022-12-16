@@ -26,6 +26,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 
 import javax.sql.DataSource;
 
@@ -51,8 +52,12 @@ public class DatabaseInitialize implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) {
         // 已存在则不初始化数据库
-        String[] split = url.split(":");
-        File file = new File(split[split.length - 1] + ".mv.db");
+        String path = url.substring(url.lastIndexOf(":") + 1);
+        if (path.contains("?")) {
+            path = path.substring(0, path.lastIndexOf("?"));
+        }
+        File file = new File(path + ".mv.db");
+        log.info("db file: {}", file.getPath());
         if (FileUtil.exist(file)) {
             return;
         }
@@ -61,7 +66,7 @@ public class DatabaseInitialize implements ApplicationRunner {
         // 初始化数据库
         try {
             final ClassPathResource resource = new ClassPathResource("db/init.sql");
-            final InputStreamReader reader = new InputStreamReader(resource.getInputStream());
+            final InputStreamReader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
             ScriptRunner scriptRunner = new ScriptRunner(dataSource.getConnection());
             scriptRunner.setSendFullScript(true); // 必须设置该参数为true，否则无法执行begin……end
             scriptRunner.setLogWriter(null);
