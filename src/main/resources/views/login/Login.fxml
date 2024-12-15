@@ -87,7 +87,7 @@
                             <Cursor fx:constant="HAND"/>
                         </cursor>
                     </ImageView>
-                    <JFXTextField fx:id="textCaptcha" styleClass="login-input" labelFloat="true" promptText="账号"
+                    <JFXTextField fx:id="textCaptcha" styleClass="login-input" labelFloat="true" promptText="验证码"
                                   GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.columnIndex="1"
                                   GridPane.columnSpan="1">
                         <validators>
